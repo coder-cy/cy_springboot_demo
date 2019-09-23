@@ -17,16 +17,9 @@ public class RegisterController {
     AccountService accountService;
 
     @PostMapping(value = "/register")
-    public HashMap<String, Object> register(@RequestBody RegisterParam registerParam) {
+    public HashMap<String, Object> register(@RequestBody RegisterParam registerParam) throws Exception {
         HashMap resultMap = Tool.getResultMap();
-        try {
-            this.accountService.doRegister(registerParam);
-        } catch (Exception e) {
-            e.printStackTrace();
-            resultMap.put("errorMsg", e.toString());
-        } finally {
-            return resultMap;
-        }
-
+        this.accountService.doRegister(registerParam);
+        return resultMap;
     }
 }

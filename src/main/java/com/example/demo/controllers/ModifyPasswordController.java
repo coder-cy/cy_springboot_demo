@@ -22,13 +22,5 @@ public class ModifyPasswordController {
         HashMap resultMap = Tool.getResultMap();
         this.accountService.doModifyPassword(modifyPasswordParam);
         return resultMap;
-//        try {
-//            this.accountService.doModifyPassword(modifyPasswordParam);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            resultMap.put("errorMsg", e.toString());
-//        } finally {
-//            return resultMap;
-//        }
     }
 }

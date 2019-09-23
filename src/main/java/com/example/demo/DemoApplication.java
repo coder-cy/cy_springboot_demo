@@ -2,9 +2,12 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+@ServletComponentScan(basePackages = "com.example.demo.*")
 @RestController  //表示该类中的所有方法返回json格式，等同于@Controller+ @ResponseBody
 //让spring boot自动给程序进行必要的配置，等价于以默认属性使用@Configuration，@EnableAutoConfiguration 和@ComponentScan
 @SpringBootApplication
